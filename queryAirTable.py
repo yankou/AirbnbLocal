@@ -76,15 +76,21 @@ def queryAirbnb(lat, lng, price):
 
 		query = {'loc': {'$nearSphere': \
 		{'$geometry': {'type' : "Point",'coordinates' : [ lng, lat ]},\
-		'$minDistance': 0, '$maxDistance': 800}},\
+		'$minDistance': 0, '$maxDistance': 600}},\
 		'price': {'$lt': price}} 
 
-		for item in collection.find(query).limit(10):
+		for item in collection.find(query).limit(15):
 		    info = {}
 		    info['hostID'] = item['hostID']
 		    info['price'] = item['price']
 		    info['disToSub'] = item['disToSub']
 		    info['roomType'] = item['roomType']
+		    info['inc'] = item['inc']
+		    info['dinner'] = item['dinner']
+		    info['bars'] = item['bars']
+		    info['nightlife'] = item['nightlife']
+		    info['grocery'] = item['grocery']
+		    # info['img'] = item['img']
 		    info['coord'] = item['coordinates']
 		    info['BayeAve'] = item['BayeAve']
 		    info['neighborhood'] = item['neighborhood']
@@ -107,9 +113,9 @@ def queryAirbnb(lat, lng, price):
 		{'$geometry': {'type' : "Point",'coordinates' : [ lng, lat ]},\
 		'$minDistance': 0, '$maxDistance': 1600}},\
 		'BayeAve': {'$gt': aveScore},\
-		'price': {'$lt': price+10 }}
+		'price': {'$lt': price+20 }}
 
-		for item in collection.find(query).sort([('BayeAve', pymongo.DESCENDING)]).limit(10):
+		for item in collection.find(query).sort([('BayeAve', pymongo.DESCENDING)]).limit(15):
 		    info = {}
 		    info['hostID'] = item['hostID']
 		    info['price'] = item['price']
