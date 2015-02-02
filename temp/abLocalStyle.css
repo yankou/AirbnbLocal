@@ -1,0 +1,111 @@
+/* Modal general
+ * ------------- */
+#safe-container {
+	background-color: rgba(230, 230, 230, .50); 
+	font-family: Arial, Sans-serif;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000; 
+}
+#safe-container #safe-modal {
+	background-color: rgba(255, 255,255, 1); 
+	border: 1px solid #808080;
+	box-shadow: 0 4px 16px rgba(0,0,0,.2);
+	left: 50%;
+	margin-left: -450px;
+	padding: 10px;
+	position: fixed;
+	top: 70px;
+    width: 740px;}
+
+    
+/* #safe-container p,
+#safe-container span,
+#safe-container td,
+#safe-container tr,
+#safe-container input,
+#safe-container label {
+	font-family: Arial, Sans-serif;
+	font-size: 13px;
+} */
+
+/* Modal "columns" (simulated via table)
+ * ------------------------------------- */
+#safe-container table {
+	border: none;	
+}
+#safe-container table,
+#safe-container tbody,
+#safe-container tr,
+#safe-container td {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+#safe-container .safe-column {
+	padding: 10px;
+}
+#safe-container .safe-column.safe-left {
+	width: 400px;
+}
+#safe-container .safe-column.safe-right {
+	vertical-align: top;
+	width: 440px;
+}
+
+
+
+/* Modal title
+ * ----------- */
+#safe-container #safe-title {
+	font-weight: bold;
+	margin: 10px;
+}
+
+#g2e-container #g2e-title span {
+	font-size: 150px;
+	font-family: 'Open Sans';
+	left: 10px;
+	position: relative;
+	top: -4px;
+}
+
+
+#safe-container #safe-title #safe-close-btn {
+	background: white;
+	border: none;
+	color: #808080;
+	cursor: pointer;
+	float: right;
+	font-size: 20px;
+	height: 25px;
+	padding: 0 2px;
+	width: 25px;
+}
+#safe-container #safe-title #safe-close-btn:hover {
+	color: #696969;
+}
+
+#safe-container #safe-left-divider {
+    height: 15px;
+}
+
+#safe-container #safe-right-divider {
+    height: 15px;
+}
+
+
+.input-divider {
+    height: 15px;
+}
+
+.ui-slider-handle{
+    width: 35px !important;
+    font-size: small !important;
+    color: #F5BE5F !important;
+    text-align: top !important;
+}
